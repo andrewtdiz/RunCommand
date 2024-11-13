@@ -8,7 +8,7 @@ end
 local ChangeHistoryService = game:GetService("ChangeHistoryService")
 local Selection = game:GetService("Selection")
 local RunService = game:GetService("RunService")
-local ServerScriptService = game:GetService("ServerScriptService") 
+local ServerStorage = game:GetService("ServerStorage")
 local ScriptEditorService = game:GetService("ScriptEditorService")
 local StudioService = game:GetService("StudioService")
 local HttpService = game:GetService("HttpService")
@@ -33,7 +33,7 @@ runPreviousScriptButton.Enabled = false
 -- Creates a folder or fetches the current one 
 local function GetRunCommandFolder(): Folder
 
-	local runCommandFolder: Folder = ServerScriptService:FindFirstChild("RunCommands") or Instance.new("Folder", ServerScriptService)
+	local runCommandFolder: Folder = ServerStorage:FindFirstChild("RunCommands") or Instance.new("Folder", ServerStorage)
 	runCommandFolder.Name = "RunCommands"
 
 	return runCommandFolder
